@@ -2,6 +2,7 @@ package be.vdab;
 
 import java.io.File;
 import java.net.URL;
+import java.util.Date;
 import java.util.Locale;
 
 public class ClassA implements InterfaceA {
@@ -10,6 +11,8 @@ public class ClassA implements InterfaceA {
 	private Locale defaultTaalEnLand;
 	private File importData;
 	private BladRichtingInPrinter defaultBladRichting;
+	private EMailAdres webMasterEMailAdres;
+	private Date websiteGestart;
 
 	public String getTelefoonNrHelpDesk() {
 		return telefoonNrHelpDesk;
@@ -31,6 +34,14 @@ public class ClassA implements InterfaceA {
 		return defaultBladRichting;
 	}
 
+	public EMailAdres getWebMasterEMailAdres() {
+		return webMasterEMailAdres;
+	}
+
+	public Date getWebsiteGestart() {
+		return websiteGestart;
+	}
+
 	public void setTelefoonNrHelpDesk(String telefoonNrHelpDesk) {
 		this.telefoonNrHelpDesk = telefoonNrHelpDesk;
 	}
@@ -47,13 +58,21 @@ public class ClassA implements InterfaceA {
 		this.importData = importData;
 	}
 
-	public void setDefaultBladRichting(String defaultBladRichting) {
-		this.defaultBladRichting = BladRichtingInPrinter.valueOf(defaultBladRichting);
+	public void setDefaultBladRichting(BladRichtingInPrinter defaultBladRichting) {
+		this.defaultBladRichting = defaultBladRichting;
 	}
-	
+
+	public void setWebMasterEMailAdres(EMailAdres webMasterEMailAdres) {
+		this.webMasterEMailAdres = webMasterEMailAdres;
+	}
+
+	public void setWebsiteGestart(Date websiteGestart) {
+		this.websiteGestart = websiteGestart;
+	}
+
 	@Override
 	public String getBoodschap() {
 		return "ClassA object";
 	}
-	
+
 }
