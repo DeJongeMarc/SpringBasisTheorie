@@ -2,7 +2,7 @@ package be.vdab;
 
 import java.util.Map;
 
-class HelpdeskMedewerkers {
+public class HelpdeskMedewerkers {
 	private final Map<String, Integer> medewerkers;
 
 	HelpdeskMedewerkers(Map<String, Integer> medewerkers) {
