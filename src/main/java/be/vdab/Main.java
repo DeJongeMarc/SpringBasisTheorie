@@ -1,11 +1,15 @@
 package be.vdab;
 
+import java.math.BigDecimal;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import be.vdab.services.EuroService;
 
 public class Main {
 
 	public static void main(String[] args) {
-		try (ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("container.xml")) {
+		try (ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("restclients.xml", "services.xml")) {
 			// ClassA objectA = context.getBean(ClassA.class);
 			// System.out.println(objectA.getKoersenURL());
 			// System.out.println(objectA.getDefaultTaalEnLand().getDisplayName());
@@ -17,11 +21,12 @@ public class Main {
 			// System.out.println(context.getBean(HelpdeskMedewerkers.class));
 			// System.out.println(context.getBean(ClassA.class).getWebMasterEMailAdres());
 			// System.out.println(context.getBean(ClassA.class).getWebsiteGestart());
-			context.getBean("teller1", Teller.class).verhoog();
-			context.getBean("teller1", Teller.class).verhoog();
-			Teller teller2 = context.getBean("teller2", Teller.class);
-			teller2.verhoog();
-			context.getBean("teller2", Teller.class).verhoog();
+//			context.getBean("teller1", Teller.class).verhoog();
+//			context.getBean("teller1", Teller.class).verhoog();
+//			Teller teller2 = context.getBean("teller2", Teller.class);
+//			teller2.verhoog();
+//			context.getBean("teller2", Teller.class).verhoog();
+			System.out.println(context.getBean(EuroService.class).naarDollar(BigDecimal.valueOf(2))); 
 		}
 	}
 }
