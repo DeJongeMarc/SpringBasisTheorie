@@ -11,13 +11,13 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-@Component
-@Qualifier("ECB")
+//@Component
+//@Qualifier("ECB")
 public class ECBKoersenClient implements KoersenClient {
 	private static final Logger LOGGER = Logger.getLogger(ECBKoersenClient.class.getName());
 	private final URL url;
 
-	public ECBKoersenClient(@Value("${ecbKoersenURL}") URL url) {
+	public ECBKoersenClient(/*@Value("${ecbKoersenURL}")*/ URL url) {
 		this.url = url;
 	}
 
