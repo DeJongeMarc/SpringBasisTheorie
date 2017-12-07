@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns='http://www.springframework.org/schema/beans'
 	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
-	xsi:schemaLocation='http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd'>
+	 xmlns:context='http://www.springframework.org/schema/context' 
+	xsi:schemaLocation='http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	 http://www.springframework.org/schema/context    http://www.springframework.org/schema/context/spring-context.xsd'> 
 	<!-- <bean id='classA' class='be.vdab.ClassA'>
 		<property name="telefoonNrHelpDesk" value="01/234.567.8"></property>
 		<property name='koersenURL'
@@ -47,6 +49,9 @@
 	<bean id='euroService' class='be.vdab.services.EuroService'>
 		<constructor-arg ref='ecbKoersenClient' />
 	</bean> -->
-	<import resource='restclients.xml'/>
-	<import resource='services.xml'/> 
+	<!-- <import resource='restclients.xml'/>
+	<import resource='services.xml'/>  -->
+	 <context:property-placeholder location='classpath:spelletje.properties'/>   
+	 <context:annotation-config/> 
+	<bean id='spelletje' class='be.vdab.gaming.Spelletje'/>
 </beans>
